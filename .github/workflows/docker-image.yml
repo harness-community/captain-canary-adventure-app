@@ -6,14 +6,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-#    steps:
-#    - run: echo "${{ MY_SECRET_NAME }}"
-#    - uses: actions/checkout@v3
-#    - name: Build the Docker image
-#      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
-  steps:
+    steps:
     - shell: bash
       env:
         SUPER_SECRET: ${{ secrets.MY_SECRET_NAME }}
-      run: |
-        echo "$SUPER_SECRET"
+      run: echo "$SUPER_SECRET"
+
