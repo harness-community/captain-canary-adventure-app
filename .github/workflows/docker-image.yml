@@ -5,6 +5,20 @@ on:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
+on:
+  push:
+    branches: [ "master" ]
+    inputs:
+      environment:
+        type: choice
+        description: "Environment to deploy (dev, qa, acc, prd)"
+        options:
+          - dev
+          - qa
+          - acc
+          - prd
+        default: "dev"
+        required: true
 #env:
 #  myvar: ${{ secrets.MYVALUE }}
 jobs:
