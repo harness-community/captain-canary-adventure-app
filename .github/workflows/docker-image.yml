@@ -10,5 +10,6 @@ jobs:
     - shell: bash
       env:
         SUPER_SECRET: ${{ secrets.MY_SECRET_NAME }}
-      run: echo "$SUPER_SECRET"
+      run: |
+        echo "$SUPER_SECRET"
 
